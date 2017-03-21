@@ -96,9 +96,10 @@ app.get('/latest', function (req, res) {
             }
             else {error();}
         });
+        
         }
-        else {error();}
-        db.close();
+         else {error();}
+         db.close();
     });
 });
 
