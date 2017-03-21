@@ -102,4 +102,8 @@ app.get('/latest', function (req, res) {
     });
 });
 
+app.get('', function (req, res) {
+    res.send("Enter a query!");
+});
+
 app.listen(process.env.PORT||8080);
