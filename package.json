@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.2"
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "mongodb": "^2.2.25",
+    "node-google-image-search": "^1.0.3"
   }
 }
