@@ -59,11 +59,12 @@ function storeQuery () {
     MongoClient.connect(url, function(err, db) {
     if (!err) {
      db.collection('queries').insert(object);
-        db.close();
+        
     }
     else {
         error();
     }
+    db.close();
     });
 }
 
