@@ -58,6 +58,7 @@ function queryTerms (input) {
 function storeQuery () {
     MongoClient.connect(url, function(err, db) {
     if (!err) {
+        console.log(object);
      db.collection('queries').insert(object);
         
     }
