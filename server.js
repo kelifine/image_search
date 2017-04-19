@@ -29,7 +29,7 @@ var createValidated = function(db, callback) {
 	      'validator': { '$and':
 	         [
 	            { 'term': { '$type': "string" } },
-	            { 'when': { '$type': "date"} },
+	            { 'when': { '$exists': true} },
 	         ]
 	      }
 	   },	   
