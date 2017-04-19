@@ -26,10 +26,10 @@ MongoClient.connect(url, function(err, db) {
 var createValidated = function(db, callback) {
   db.createCollection("queries", 
 	   {
-	      'validator': { '$and':
+	      validator: { $and:
 	         [
-	            { 'term': { '$type': "string" } },
-	            { 'when': { '$exists': true} },
+	            { term: { $type: "string" } },
+	            { when: { $exists: true} },
 	         ]
 	      }
 	   },	   
