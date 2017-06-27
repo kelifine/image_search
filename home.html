@@ -1,0 +1,15 @@
+<h2>How to use:</h2>
+
+<p>Enter a term to receive the image URLs, alt text and page URLs for your search term. Add ?offset=yournumberhere to go to a specific page of the results. Type in 'latest' to see the latest query terms and when they were submitted.</p>
+
+<h3>Examples:</h3>
+
+<h4>Input:</h4>
+<p>https://kelifine-image-search.herokuapp.com/imagesearch/dogs</p>
+<h4>Result:</h4>
+<p>[{"url":"https://static01.nyt.com/images/2016/08/10/science/10tb-dogsperm01/10tb-dogsperm01-superJumbo.jpg","snippet":"A Warning for Dogs, and Their Best Friends, in Study of Fertility ...","thumbnail":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsHOako6qx75BxNfb9qSY9quGYHnL1MYK0bt5FnvDGpVXWoSrUbBy5CwDx","context":"https://www.nytimes.com/2016/08/10/science/dog-sperm-fertility.html"},{"url":"https://www.rover.com/blog/wp-content/uploads/2015/05/dog-candy-junk-food-599x340.jpg","snippet":"Are Dogs Ticklish? | Rover.com","thumbnail":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ40WJpwGN44fYBGtOyEbv7waAdx8VDL5MHPs-a6CckzGMwQVPIEuewQNhw","context":"https://www.rover.com/blog/are-dogs-ticklish-in/"},{"url":"http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/pets_taking_care_of_puppy__slideshow/493x335_pets_taking_care_of_puppy__slideshow.jpg?resize=400px:*&output-quality=50","snippet":"Dog Health Center | Dog Care and Information from WebMD","thumbnail":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgCIlJlQciv7u_GAKupSfK7NEpQ0qTd5Alp9vYEz9TbItqbf4-BF9UMQ","context":"http://pets.webmd.com/dogs/default.htm"}...</p>
+
+<h4>Input:</h4>
+<p>https://kelifine-image-search.herokuapp.com/latest</p>
+<h4>Result:</h4>
+<p>{"term":"dogs","when":"2017-03-17T21:32:25.619Z"},{"term":"dogs","when":"2017-03-17T21:32:52.250Z"},{"term":"dogs","when":"2017-03-17T21:33:17.549Z"},{"term":"dogs","when":"2017-03-20T15:16:15.469Z"},{"term":"dogs","when":"2017-03-20T15:50:04.481Z"},{"term":"dogs","when":"2017-03-20T15:50:04.710Z"},</p>

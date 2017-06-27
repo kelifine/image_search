@@ -4,7 +4,7 @@ var path = require('path');
 var env = require('dotenv').config();
 var imageSearch = require('node-google-image-search');
 var MongoClient = require('mongodb').MongoClient;
-var url = process.env.MONGODB_URI;
+var url = 'mongodb://localhost:27017/previousSearchesDb';
 
 var results;
 var object;
@@ -26,10 +26,10 @@ MongoClient.connect(url, function(err, db) {
 var createValidated = function(db, callback) {
   db.createCollection("queries", 
 	   {
-	      validator: { $and:
+	      'validator': { '$and':
 	         [
-	            { term: { $type: "string" } },
-	            { when: { $exists: true} },
+	            { 'term': { '$type': "string" } },
+	            { 'when': { '$type': "date"} },
 	         ]
 	      }
 	   },	   
@@ -46,11 +46,12 @@ var createValidated = function(db, callback) {
 };
 
 
+
 function queryTerms (input) {
    var d = new Date();
    object = {
         term: input,
-        when: d.toISOString()
+        when: d
     };
 }
 
@@ -58,14 +59,12 @@ function queryTerms (input) {
 function storeQuery () {
     MongoClient.connect(url, function(err, db) {
     if (!err) {
-        console.log(object);
      db.collection('queries').insert(object);
-        
+        db.close();
     }
     else {
         error();
     }
-    db.close();
     });
 }
 
@@ -98,15 +97,14 @@ app.get('/latest', function (req, res) {
             }
             else {error();}
         });
-        
         }
-         else {error();}
-         db.close();
+        else {error();}
+        db.close();
     });
 });
 
 app.get('', function (req, res) {
-    res.send("Enter a query!");
+    res.sendFile(path.join(__dirname, './home.html'));
 });
 
 app.listen(process.env.PORT||8080);
