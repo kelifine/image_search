@@ -1,10 +1,9 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var env = require('dotenv').config();
 var imageSearch = require('node-google-image-search');
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:27017/previousSearchesDb';
+var url =process.env.MONGODB_URI;
 
 var results;
 var object;
